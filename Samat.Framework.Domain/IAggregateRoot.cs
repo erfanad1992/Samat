@@ -6,7 +6,6 @@ namespace Samat.Framework.Domain
     {
         IList<INotification> Events { get; }
 
-        void ClearEvents();
         void RaiseEvent(INotification @event);
     }
 }

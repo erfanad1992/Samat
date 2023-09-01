@@ -10,13 +10,16 @@
     <Folder Include="Customers\Exceptions\" />
     <Folder Include="Customers\Services\" />
     <Folder Include="Customers\ValueObjects\" />
-    <Folder Include="Orders\Entities\" />
     <Folder Include="Orders\Exceptions\" />
     <Folder Include="Orders\Services\" />
     <Folder Include="Orders\ValueObjects\" />
     <Folder Include="Products\Exceptions\" />
     <Folder Include="Products\ValueObjects\" />
     <Folder Include="Products\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Samat.Framework.Domain\Samat.Framework.Domain.csproj" />
   </ItemGroup>
 
 </Project>
