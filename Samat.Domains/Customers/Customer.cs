@@ -4,15 +4,16 @@ namespace Samat.Domains.Customers
 {
     public class Customer : AggregateRoot<long>
     {
-        private readonly List<long> _orderIds = new();
 
         public Customer(
+            long id,
             string nationalCode,
-            string firstName, 
+            string firstName,
             string lastName,
             DateTime lastPurchaseDate
             )
         {
+            Id = id;
             NationalCode = nationalCode;
             FirstName = firstName;
             LastName = lastName;
@@ -23,20 +24,18 @@ namespace Samat.Domains.Customers
         {
 
         }
-        public string NationalCode  { get; private set; }
+        public string NationalCode { get; private set; }
         public string FirstName { get; private set; }
-        public string LastName { get;private set; }
+        public string LastName { get; private set; }
         public DateTime LastPurchaseDate { get; private set; }
 
-        public void Update(string)
+        public void Update(string nationalCode, string firstName, string lastName, DateTime lastPurchaseDate)
         {
-
+            NationalCode = nationalCode;
+            FirstName = firstName;
+            LastName = lastName;
+            LastPurchaseDate = lastPurchaseDate;
         }
-        public ICollection<long> OrderIds => _orderIds.AsReadOnly();
 
-        public void AddOrderId(long orderId)
-        {
-            _orderIds.Add(orderId);
-        }
     }
 }
