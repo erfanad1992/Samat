@@ -10,6 +10,7 @@
     <Folder Include="Customers\Exceptions\" />
     <Folder Include="Customers\Services\" />
     <Folder Include="Customers\ValueObjects\" />
+    <Folder Include="Extensions\" />
     <Folder Include="Orders\Exceptions\" />
     <Folder Include="Orders\Services\" />
     <Folder Include="Products\Exceptions\" />
