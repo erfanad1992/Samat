@@ -12,7 +12,7 @@ using Samat.Infrastructure.EfPersistance;
 namespace Samat.Infrastructure.EfPersistance.Migrations
 {
     [DbContext(typeof(SamatDbContext))]
-    [Migration("20230902191147_init")]
+    [Migration("20230902192355_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -94,6 +94,7 @@ namespace Samat.Infrastructure.EfPersistance.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
