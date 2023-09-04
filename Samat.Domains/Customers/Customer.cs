@@ -24,6 +24,10 @@ namespace Samat.Domains.Customers
         {
 
         }
+        public static Customer Build(long id, string firstName, string lastName, string nationalCode, DateTime lastPurchaseDate)
+        {
+            return new Customer(id, nationalCode, firstName, lastName, lastPurchaseDate);
+        }
         public string NationalCode { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }

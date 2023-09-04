@@ -1,16 +1,18 @@
-﻿using Samat.Domains.Orders.ValueObjects;
+﻿using Samat.Domains.Orders.Services;
+using Samat.Domains.Orders.ValueObjects;
 using Samat.Framework.Domain;
 
 namespace Samat.Domains.Orders.Entities
 {
     public class OrderItem : Entity<long>
     {
-        public OrderItem(long id, Product productId, int quantity, long orderId)
+        public OrderItem(long id, Product productId, int quantity, long orderId,IGetProductPriceDomainService getProductPriceDomainService)
         {
             Id = id;
             ProductId = productId;
             Quantity = quantity;
             OrderId = orderId;
+            SetTotalPrice(getProductPriceDomainService);
         }
         private OrderItem()
         {
@@ -21,9 +23,14 @@ namespace Samat.Domains.Orders.Entities
         public Product ProductId { get; set; }
         public int Quantity { get; private set; }
 
-        private void SetTotalPrice()
+        private void SetTotalPrice(IGetProductPriceDomainService getProductPriceDomainService)
         {
-            TotalPrice = totalPrice;
+            var productPrice = getProductPriceDomainService.GetProductPrice(ProductId.Id).GetAwaiter().GetResult();
+            if (productPrice != null)
+            {
+                TotalPrice = Quantity * productPrice;
+            }
+        
         }
     }
 }
