@@ -17,7 +17,13 @@ namespace Samat.Domains.Orders.Entities
 
         }
         public long OrderId { get; private set; }
+        public decimal TotalPrice { get; private set; }
         public Product ProductId { get; set; }
         public int Quantity { get; private set; }
+
+        private void SetTotalPrice()
+        {
+            TotalPrice = totalPrice;
+        }
     }
 }

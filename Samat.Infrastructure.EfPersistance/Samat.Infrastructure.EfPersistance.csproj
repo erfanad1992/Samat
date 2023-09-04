@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Samat.Domains\Samat.Domains.csproj" />
+    <ProjectReference Include="..\Samat.Framework.Presistance.EF\Samat.Framework.Presistance.EF.csproj" />
   </ItemGroup>
 
 </Project>

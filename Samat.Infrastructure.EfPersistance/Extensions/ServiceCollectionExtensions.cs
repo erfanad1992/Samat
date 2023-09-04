@@ -1,6 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Samat.Domains.Customers;
+using Samat.Domains.Orders;
+using Samat.Domains.Products;
+using Samat.Infrastructure.EfPersistance.Customers;
+using Samat.Infrastructure.EfPersistance.Orders;
+using Samat.Infrastructure.EfPersistance.Products;
 
 namespace Samat.Infrastructure.EfPersistance.Extensions
 {
@@ -17,7 +23,9 @@ namespace Samat.Infrastructure.EfPersistance.Extensions
             });
 
             services.AddScoped<DbContext>((sp) => sp.GetRequiredService<SamatDbContext>());
-            //services.AddTransient<IPersonInfoRepository, PersonInfoRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
 
         }
