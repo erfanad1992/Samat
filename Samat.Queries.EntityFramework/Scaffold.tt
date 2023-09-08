@@ -12,10 +12,10 @@
    var dbContext="SamatQueriesDbContext";
 
    var tablelist = @"
-Customers
-Orders
-OrderItems
-Products
+Customer
+Order
+OrderItem
+Product
 ";
 
   string[] tables = Regex.Split(tablelist.Trim(), "\r\n|\r|\n");

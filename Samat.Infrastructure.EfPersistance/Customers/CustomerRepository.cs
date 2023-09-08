@@ -10,6 +10,10 @@ namespace Samat.Infrastructure.EfPersistance.Customers
         public CustomerRepository(DbContext context) : base(context)
         {
         }
+        public async Task Create(Customer customer)
+        {
+            await DbSet.AddAsync(customer);
+        }
 
         protected override IList<Expression<Func<Customer, object?>>> GetIncludes()
         {

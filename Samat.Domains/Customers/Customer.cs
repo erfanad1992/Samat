@@ -10,7 +10,7 @@ namespace Samat.Domains.Customers
             string nationalCode,
             string firstName,
             string lastName,
-            DateTime lastPurchaseDate
+            DateTime? lastPurchaseDate
             )
         {
             Id = id;
@@ -24,16 +24,16 @@ namespace Samat.Domains.Customers
         {
 
         }
-        public static Customer Build(long id, string firstName, string lastName, string nationalCode, DateTime lastPurchaseDate)
+        public static Customer Build(long id, string firstName, string lastName, string nationalCode, DateTime? lastPurchaseDate)
         {
             return new Customer(id, nationalCode, firstName, lastName, lastPurchaseDate);
         }
         public string NationalCode { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
-        public DateTime LastPurchaseDate { get; private set; }
+        public DateTime? LastPurchaseDate { get; private set; }
 
-        public void Update(string nationalCode, string firstName, string lastName, DateTime lastPurchaseDate)
+        public void Update(string nationalCode, string firstName, string lastName, DateTime? lastPurchaseDate)
         {
             NationalCode = nationalCode;
             FirstName = firstName;

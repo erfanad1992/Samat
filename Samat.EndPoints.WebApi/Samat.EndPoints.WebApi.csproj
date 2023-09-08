@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Samat.Applications.Contracts\Samat.Applications.Contracts.csproj" />
+    <ProjectReference Include="..\Samat.Framework.Endpoints.Web\Samat.Framework.Endpoints.Web.csproj" />
     <ProjectReference Include="..\Samat.Infrastructure.EfPersistance\Samat.Infrastructure.EfPersistance.csproj" />
   </ItemGroup>
 

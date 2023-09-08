@@ -11,8 +11,16 @@
     <Folder Include="QueryHandlers\" />
   </ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="IdGen" Version="3.0.3" />
+	</ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Samat.Applications.Contracts\Samat.Applications.Contracts.csproj" />
+    <ProjectReference Include="..\Samat.Domains\Samat.Domains.csproj" />
+    <ProjectReference Include="..\Samat.Framework.Application\Samat.Framework.Application.csproj" />
+    <ProjectReference Include="..\Samat.Framework.Domain\Samat.Framework.Domain.csproj" />
   </ItemGroup>
+	
 
 </Project>

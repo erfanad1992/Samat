@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Samat.EndPoints.WebApi.Controllers
+namespace Samat.EndPoints.WebApi.Controllers.Customers
 {
     [ApiController]
     [Route("[controller]")]

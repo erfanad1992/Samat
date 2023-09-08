@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Samat.Infrastructure.EfPersistance;
 
@@ -11,9 +12,11 @@ using Samat.Infrastructure.EfPersistance;
 namespace Samat.Infrastructure.EfPersistance.Migrations
 {
     [DbContext(typeof(SamatDbContext))]
-    partial class SamatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230908112606_change_customer_lastPurchaseDate_to_nullable")]
+    partial class change_customer_lastPurchaseDate_to_nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
