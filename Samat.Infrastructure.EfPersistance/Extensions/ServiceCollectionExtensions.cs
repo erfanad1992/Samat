@@ -16,7 +16,7 @@ namespace Samat.Infrastructure.EfPersistance.Extensions
     {
         public static void AddPersistenceEntityFrameworkServices(this IServiceCollection services, IConfiguration configuration)
         {
-
+              
             services.AddDbContext<SamatDbContext>((serviceProvider, options) =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString"),
@@ -24,7 +24,7 @@ namespace Samat.Infrastructure.EfPersistance.Extensions
                 options.AddPersianYeKeCommandInterceptor();
 
             });
-          
+            services.AddUnitOfWorkByEntityFramework();
             services.AddScoped<DbContext>((sp) => sp.GetRequiredService<SamatDbContext>());
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();

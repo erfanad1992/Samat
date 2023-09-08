@@ -10,7 +10,7 @@ namespace Samat.Framework.Endpoints.Web.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDefaultFrameworkServices(this IServiceCollection services, IConfiguration configuration) where T : class
+    public static void AddDefaultFrameworkServices(this IServiceCollection services, IConfiguration configuration) 
     {
 
         //services.AddDefaultAuthentication(configuration);

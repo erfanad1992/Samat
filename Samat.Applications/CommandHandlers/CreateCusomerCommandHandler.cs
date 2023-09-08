@@ -11,9 +11,10 @@ namespace Samat.Applications.CommandHandlers
         private readonly ICustomerRepository _repository;
         private readonly IIdGenerator _idGenerator;
 
-        public CreateCusomerCommandHandler(IIdGenerator idGenerator)
+        public CreateCusomerCommandHandler(IIdGenerator idGenerator, ICustomerRepository repository)
         {
             _idGenerator = idGenerator;
+            _repository = repository;
         }
 
         public  async Task<long> Handle(CreateCustomerCommand command, CancellationToken cancellationToken)

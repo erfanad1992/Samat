@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Samat.Applications.Contracts\Samat.Applications.Contracts.csproj" />
+    <ProjectReference Include="..\Samat.Applications\Samat.Applications.csproj" />
     <ProjectReference Include="..\Samat.Framework.Endpoints.Web\Samat.Framework.Endpoints.Web.csproj" />
     <ProjectReference Include="..\Samat.Infrastructure.EfPersistance\Samat.Infrastructure.EfPersistance.csproj" />
   </ItemGroup>

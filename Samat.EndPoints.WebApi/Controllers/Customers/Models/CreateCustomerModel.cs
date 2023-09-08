@@ -10,7 +10,13 @@ namespace Samat.EndPoints.WebApi.Controllers.Customers.Models
 
         internal CreateCustomerCommand ToCommand()
         {
-
+            return new CreateCustomerCommand
+                (
+            
+                FirstName = FirstName,
+                LastName = LastName,
+                NationalCode = NationalCode
+                 );
         }
     }
 }
