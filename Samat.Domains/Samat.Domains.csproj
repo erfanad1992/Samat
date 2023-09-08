@@ -12,7 +12,6 @@
     <Folder Include="Customers\ValueObjects\" />
     <Folder Include="Extensions\" />
     <Folder Include="Orders\Exceptions\" />
-    <Folder Include="Orders\Services\" />
     <Folder Include="Products\Exceptions\" />
     <Folder Include="Products\ValueObjects\" />
     <Folder Include="Products\Services\" />

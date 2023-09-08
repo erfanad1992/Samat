@@ -33,6 +33,27 @@ namespace Samat.Domains.Customers
         public string LastName { get; private set; }
         public DateTime? LastPurchaseDate { get; private set; }
 
+
+        //public void ApplyDiscountIfEligible()
+        //{
+        //    if (LastPurchaseDate.HasValue)
+        //    {
+        //        var daysSinceLastPurchase = (DateTime.Now - LastPurchaseDate.Value).Days;
+
+        //        if (daysSinceLastPurchase < 7)
+        //        {
+        //            // Apply a 20% discount up to 100,000 tomans
+        //            var discountAmount = Math.Min(100000, TotalPurchaseAmount * 0.20m);
+        //            TotalPurchaseAmount -= discountAmount;
+        //        }
+        //        else if (daysSinceLastPurchase < 14)
+        //        {
+        //            // Apply a 15% discount up to 75,000 tomans
+        //            var discountAmount = Math.Min(75000, TotalPurchaseAmount * 0.15m);
+        //            TotalPurchaseAmount -= discountAmount;
+        //        }
+        //    }
+        //}
         public void Update(string nationalCode, string firstName, string lastName, DateTime? lastPurchaseDate)
         {
             NationalCode = nationalCode;

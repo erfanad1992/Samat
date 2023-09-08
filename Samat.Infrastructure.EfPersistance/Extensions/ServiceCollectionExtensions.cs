@@ -30,6 +30,7 @@ namespace Samat.Infrastructure.EfPersistance.Extensions
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<IGetProductPriceDomainService,GetProductPriceDomainService>();
+            services.AddTransient<IGetCustomerLastPurchaseDateDomainService, GetCustomerLastPurchaseDateDomainService>();
 
 
         }

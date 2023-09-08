@@ -26,6 +26,11 @@ public partial class Customer
 
     public DateTime LastPurchaseDate { get; set; }
 
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal TotalPurchaseAmount { get; set; }
+
+
     [InverseProperty("Customer")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }
