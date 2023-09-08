@@ -1,6 +1,6 @@
-﻿using Hasti.Framework.Persistence.EntityFramework;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Samat.Domains.Customers;
+using Samat.Framework.Presistance.EF;
 using System.Linq.Expressions;
 
 namespace Samat.Infrastructure.EfPersistance.Customers

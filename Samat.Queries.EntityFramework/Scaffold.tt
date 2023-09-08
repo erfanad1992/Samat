@@ -1,0 +1,27 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" compilerOptions="/langversion:10" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".bat" #>
+<#
+  
+   var connectionString="Server=.;Database=SamatDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true";
+   var dbContext="SamatQueriesDbContext";
+
+   var tablelist = @"
+Customers
+Orders
+OrderItems
+Products
+";
+
+  string[] tables = Regex.Split(tablelist.Trim(), "\r\n|\r|\n");
+
+#>
+::dotnet tool install --global dotnet-ef 
+dotnet ef dbcontext scaffold "<#=connectionString#>" Microsoft.EntityFrameworkCore.SqlServer --context <#=dbContext#> --output-dir Entities --context-dir Entities/../  --force	--data-annotations <#  for(int i=0;i< tables.Length;i++) {#> --table <#=tables[i]#> <#}#>
+
+pause

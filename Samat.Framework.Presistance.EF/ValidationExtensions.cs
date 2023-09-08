@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Text;
 
-namespace Hasti.Framework.Persistence.EntityFramework;
+namespace Samat.Framework.Presistance.EF;
 public static class ValidationExtensions
 {
     public static string GetValidationErrors(this DbContext context)

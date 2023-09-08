@@ -2,7 +2,7 @@
 using Samat.Framework.Domain;
 using System.Linq.Expressions;
 
-namespace Hasti.Framework.Persistence.EntityFramework;
+namespace Samat.Framework.Presistance.EF;
 
 public abstract class RepositoryBase<TEntity, TKey>
      where TEntity : AggregateRoot<TKey>

@@ -1,6 +1,6 @@
-﻿using Hasti.Framework.Persistence.EntityFramework;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Samat.Domains.Orders;
+using Samat.Framework.Presistance.EF;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 

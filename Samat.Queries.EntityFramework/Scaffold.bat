@@ -1,0 +1,3 @@
+﻿::dotnet tool install --global dotnet-ef 
+dotnet ef dbcontext scaffold "Server=.;Database=SamatDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer --context SamatQueriesDbContext --output-dir Entities --context-dir Entities/../  --force	--data-annotations  --table Customers  --table Orders  --table OrderItems  --table Products 
+pause
