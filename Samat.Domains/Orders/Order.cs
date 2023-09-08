@@ -10,14 +10,14 @@ namespace Samat.Domains.Orders
         {
 
         }
-        public Order(long id ,Customer customerId, DateTime orderDate)
+        public Order(long id, Customer customerId, DateTime orderDate)
         {
             Id = id;
             CustomerId = customerId;
-            OrderDate = orderDate;
+           SetOrderDate(orderDate);
         }
 
-        public Customer CustomerId { get;private set; }
+        public Customer CustomerId { get; private set; }
 
         public DateTime OrderDate { get; private set; }
 
@@ -28,6 +28,21 @@ namespace Samat.Domains.Orders
         public void AddItems(OrderItem item)
         {
             _orderItems.Add(item);
+            SetOrderDate(DateTime.Now);
+        }
+        private void SetOrderDate(DateTime date)
+        {
+            OrderDate = date;
+        }
+
+        public void RemoveItems(long itemId)
+        {
+            var orderItem = _orderItems.FirstOrDefault(x => x.Id == itemId);
+            if (orderItem != null)
+            {
+                _orderItems.Remove(orderItem);
+            }
+
         }
 
     }

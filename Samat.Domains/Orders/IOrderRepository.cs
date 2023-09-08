@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Samat.Domains.Orders.Entities;
+using System.Linq.Expressions;
 
 namespace Samat.Domains.Orders
 {
@@ -10,7 +11,9 @@ namespace Samat.Domains.Orders
         Task<IList<Order>> GetListAsync(Expression<Func<Order, bool>> predicate);
         Task InsertAsync(Order order);
         Task<bool> IsExistsAsync(Expression<Func<Order, bool>> predicate);
-        void Remove(Order attribute);
+
+        Task  RemoveOrderItems(long orderId);
+        Task DeleteAsync(long id);
 
     }
 }
