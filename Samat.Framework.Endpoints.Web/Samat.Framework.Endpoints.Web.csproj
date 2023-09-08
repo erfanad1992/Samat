@@ -25,13 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hasti.Framework.Endpoints\Hasti.Framework.Endpoints.csproj" />
     <ProjectReference Include="..\Samat.Framework.Domain\Samat.Framework.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="FluentValidations\" />
-    <Folder Include="Options\" />
     <Folder Include="Swagger\" />
   </ItemGroup>
 

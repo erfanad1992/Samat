@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Samat.Framework.Domain;
+using Samat.Framework.Endpoints.Web.Options;
 using Samat.Framework.Endpoints.Web.Results;
 using System.Net;
 using System.Text.Json;
