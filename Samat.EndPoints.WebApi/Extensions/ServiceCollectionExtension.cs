@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Samat.Applications.Extensions;
 using Samat.Framework.Endpoints.Web.Extensions;
+using Samat.Identity.Application.Extensions;
+using Samat.Identity.Persistance.Ef.Extensions;
 using Samat.Infrastructure.EfPersistance;
 using Samat.Infrastructure.EfPersistance.Extensions;
 
@@ -14,7 +16,8 @@ namespace Samat.EndPoints.WebApi.Extensions
             services.AddPersistenceEntityFrameworkServices(configuration);
             services.AddDefaultFrameworkServices(configuration);
             services.AddApplicationServices(configuration);
-            //services.AddTransient<IPersonInfoRepository, PersonInfoRepository>();
+            services.AddIdentityApplicationServices(configuration);
+            services.AddIdentityPersistenceEntityFrameworkServices(configuration);
 
 
         }

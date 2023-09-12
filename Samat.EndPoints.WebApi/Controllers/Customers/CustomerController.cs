@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Samat.Applications.Contracts.Commands;
 using Samat.EndPoints.WebApi.Controllers.Customers.Models;
@@ -9,6 +10,7 @@ namespace Samat.EndPoints.WebApi.Controllers.Customers
 {
     [ApiController]
     [Route("Customers")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class CustomerController : ApiControllerBase
     {
         public CustomerController(IMediator mediator) : base(mediator)

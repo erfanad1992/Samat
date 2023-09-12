@@ -20,7 +20,11 @@
     <ProjectReference Include="..\Samat.Applications.Contracts\Samat.Applications.Contracts.csproj" />
     <ProjectReference Include="..\Samat.Applications\Samat.Applications.csproj" />
     <ProjectReference Include="..\Samat.Framework.Endpoints.Web\Samat.Framework.Endpoints.Web.csproj" />
+    <ProjectReference Include="..\Samat.Identity.Application\Samat.Identity.Application.csproj" />
+    <ProjectReference Include="..\Samat.Identity.Persistance.Ef\Samat.Identity.Persistance.Ef.csproj" />
+    <ProjectReference Include="..\Samat.Identity.Queries.Ef\Samat.Identity.Queries.Ef.csproj" />
     <ProjectReference Include="..\Samat.Infrastructure.EfPersistance\Samat.Infrastructure.EfPersistance.csproj" />
+    <ProjectReference Include="..\Smat.Identity.Domain\Smat.Identity.Domain.csproj" />
   </ItemGroup>
 
 </Project>

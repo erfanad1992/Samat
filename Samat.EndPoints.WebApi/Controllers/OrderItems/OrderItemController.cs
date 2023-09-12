@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Samat.Applications.Contracts.Commands;
 using Samat.EndPoints.WebApi.Controllers.Customers.Models;
@@ -10,6 +11,7 @@ namespace Samat.EndPoints.WebApi.Controllers.OrderItems
 {
     [ApiController]
     [Route("OrderItems")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class OrderItemController : ApiControllerBase
     {
         public OrderItemController(IMediator mediator) : base(mediator)
@@ -20,6 +22,7 @@ namespace Samat.EndPoints.WebApi.Controllers.OrderItems
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesDefaultResponseType]
+
         public async Task<ApiResult> AddOrderItem(long orderId, AddOrderItemModel model, CancellationToken cancellationToken)
         {
             
