@@ -14,6 +14,7 @@ namespace Samat.Domains.Orders
 
         Task  RemoveOrderItems(long orderId);
         Task DeleteAsync(long id);
+        Task<Order> GetOrder(long id);
 
     }
 }

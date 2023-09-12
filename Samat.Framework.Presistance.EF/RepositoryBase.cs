@@ -9,6 +9,8 @@ public abstract class RepositoryBase<TEntity, TKey>
      where TKey : IEquatable<TKey>
 {
     protected DbContext Context;
+
+
     protected DbSet<TEntity> DbSet;
 
     protected RepositoryBase(DbContext context)
@@ -34,6 +36,7 @@ public abstract class RepositoryBase<TEntity, TKey>
 
     public virtual async Task<TEntity> GetAsync(TKey id)
     {
+        
         return await GetQuery().SingleAsync(EntityHelper.CreateEqualityExpressionForId<TEntity, TKey>(id));
     }
 

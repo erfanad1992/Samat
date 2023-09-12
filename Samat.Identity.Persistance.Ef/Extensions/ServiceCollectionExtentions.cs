@@ -15,7 +15,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString")
+            options.UseSqlServer(configuration.GetConnectionString("SqlServerIdentityConnectionString")
                 , x => x.MigrationsHistoryTable("__EFMigrationsHistory"));
         });
 

@@ -23,7 +23,7 @@ namespace Samat.Applications.CommandHandlers
 
         public async Task Handle(AddOrderItemToOrderCommand command, CancellationToken cancellationToken)
         {
-            var order =await _orderRepository.GetAsync(command.OrderId);
+            var order =await _orderRepository.GetOrder(command.OrderId);
    
             if (order == null)
             {

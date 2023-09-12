@@ -9,8 +9,11 @@ namespace Samat.Infrastructure.EfPersistance.Orders
 {
     public class OrderRepository : RepositoryBase<Order, long>, IOrderRepository
     {
-        public OrderRepository(DbContext context) : base(context)
+        private readonly SamatDbContext _samatContext;
+
+        public OrderRepository(DbContext context, SamatDbContext samatContext) : base(context)
         {
+            _samatContext = samatContext;
         }
 
         public async Task DeleteAsync(long id)
@@ -23,7 +26,10 @@ namespace Samat.Infrastructure.EfPersistance.Orders
 
         }
 
-
+        public async Task<Order> GetOrder(long id)
+        {
+            return await _samatContext.Orders.Include(x=>x.OrderItems).FirstOrDefaultAsync(x=>x.Id == id);
+        }
         public async Task  RemoveOrderItems(long orderId)
         {
             var order =await Context.Set<Order>().Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == orderId);
