@@ -12,7 +12,8 @@ using Smat.Identity.Domain.Entities;
 
 namespace Samat.Infrastructure.EfPersistance
 {
-    public class SamatDbContext : IdentityDbContext<ApplicationUser> { 
+    public class SamatDbContext : DbContext { 
+        //IdentityDbContext<ApplicationUser> { 
         public SamatDbContext(DbContextOptions<SamatDbContext> options) : base(options)
         {
         }
