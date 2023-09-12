@@ -11,7 +11,7 @@ namespace Samat.EndPoints.WebApi.Controllers.OrderItems
 {
     [ApiController]
     [Route("OrderItems")]
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class OrderItemController : ApiControllerBase
     {
         public OrderItemController(IMediator mediator) : base(mediator)
